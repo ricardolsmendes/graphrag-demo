@@ -49,8 +49,8 @@ load_dotenv()
 # COMMAND ----------
 
 # Setting Spark Conf with the Neo4j endpoints
-spark.conf.set('neo4j.url', os.getenv('NEO4J_URL'))
-spark.conf.set('neo4j.authentication.basic.username', os.getenv('NEO4J_USER'))
+spark.conf.set('neo4j.url', os.getenv('NEO4J_URI'))
+spark.conf.set('neo4j.authentication.basic.username', os.getenv('NEO4J_USERNAME'))
 spark.conf.set('neo4j.authentication.basic.password', os.getenv('NEO4J_PASSWORD'))
 spark.conf.set('neo4j.authentication.type', 'basic')
 

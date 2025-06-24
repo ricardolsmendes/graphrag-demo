@@ -1,6 +1,6 @@
 # Neo4j conf
-NEO4J_URL=neo4j+s://bf09824f.databases.neo4j.io
-NEO4J_USER=neo4j
+NEO4J_URI=neo4j+s://bf09824f.databases.neo4j.io
+NEO4J_USERNAME=neo4j
 NEO4J_PASSWORD=<your-neo4j-password>
 
 # mlflow model conf

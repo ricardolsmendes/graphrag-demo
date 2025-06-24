@@ -72,10 +72,17 @@ for file in files:
               ADD CONSTRAINT `{table_name.lower()}_pk`
               PRIMARY KEY({pk})
               """)
-  # Add foreign key constraints if specified
   elif table_name in fks:
-    add_fk('source', table_name, fks)
-    add_fk('target', table_name, fks)
-  # Raise an exception if no primary or foreign key is specified
+    continue  # Foreign key constraints will be added after the tables are created
   else:
     raise Exception(f'No primary or foreign key specified for table {table_name}')
+
+# COMMAND ----------
+
+# Iterate over each file and add foreign key constraints if specified
+for file in files:
+  table_name = file.name.replace('/', '')
+  
+  if table_name in fks:
+    add_fk('source', table_name, fks)
+    add_fk('target', table_name, fks)
