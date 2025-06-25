@@ -4,8 +4,6 @@
 # MAGIC
 # MAGIC Before building the agent, we need to set up the graph database. To implement the knowledge graphs (KG) for our graph database, it's essential to first consider the nature of the source data. The key question here is: "Is the data structured or unstructured?" 
 # MAGIC This post focuses largely on building a KG with structured data, however, if your data is unstructured, there’s generally much more work involved to build a KG. Generally, one can use LLMs to extract structured information from unstructured content, being thoughtful about how best to extract and represent entities, attributes, and relationships in that data. More advanced approaches involve multi-step methods, including [this approach from Microsoft Research](https://arxiv.org/abs/2404.16130), but this remains, as of early 2025, an area of active research. 
-# MAGIC For structured data, a useful starting point is to leverage the structural dependencies already present in your Lakehouse’s silver tables; these tables are typically defined with constraints like foreign keys. 
-# MAGIC
 # MAGIC For structured data, a useful starting point is to leverage the structural dependencies already present in your lakehouse's silver tables; these tables are typically defined with constraints like **foreign keys**.
 # MAGIC
 # MAGIC A simple example would be the following E-R diagram of the BloodHound example

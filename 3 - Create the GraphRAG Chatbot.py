@@ -21,7 +21,7 @@ import sys
 # COMMAND ----------
 
 # Define the path to the .env file located in the "code" directory
-dot_env_path = Path("/model/code/.env")
+dot_env_path = Path(".env")
 
 # Initialize a variable to track if the .env file is loaded
 is_env_loaded = None
@@ -44,8 +44,8 @@ if not is_env_loaded:
 
 # COMMAND ----------
 
-neo4j_url = os.getenv('NEO4J_URL')
-neo4j_username = os.getenv('NEO4J_USER')
+neo4j_uri = os.getenv('NEO4J_URI')
+neo4j_username = os.getenv('NEO4J_USERNAME')
 neo4j_password = os.getenv('NEO4J_PASSWORD')
 
 # COMMAND ----------
@@ -74,7 +74,7 @@ mlflow.langchain.autolog()
 # COMMAND ----------
 
 graph = Neo4jGraph(
-    url=neo4j_url,
+    url=neo4j_uri,
     username=neo4j_username,
     password=neo4j_password
 )
